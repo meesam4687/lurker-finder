@@ -1,0 +1,16 @@
+{
+  "name": "invisibledetector",
+  "version": "1.0.0",
+  "description": "Detect Invisible Lurkers in Discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start"
+  },
+  "author": "meesam4687",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "axios": "^0.21.4"
+  }
+}
