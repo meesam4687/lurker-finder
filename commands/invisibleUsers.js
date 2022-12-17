@@ -42,7 +42,13 @@ module.exports = {
                 }
             }
         }
-        let quantity = invisibleCount = 1 ? `${invisibleCount} member is` : `${invisibleCount} members are`
+        let quantity;
+        if(invisibleCount === 1){
+            quantity = `${invisibleCount} member is`;
+        }
+        if(invisibleCount > 1){
+            quantity = `${invisibleCount} members are`;
+        }
         const invisibleEmbed = new Discord.EmbedBuilder()
             .setTitle("Invisible Users")
             .setDescription(`${quantity} Invisible here`)

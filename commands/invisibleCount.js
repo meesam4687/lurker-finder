@@ -13,7 +13,13 @@ module.exports = {
         let totalConnected = await presenceCounter(guild.id);
         let invisibleCount = totalConnected - onlineMembers.size;
         if(invisibleCount === 0) return await interaction.editReply("No One is Invisible Here");
-        let quantity = invisibleCount=1 ? `${invisibleCount} member is` : `${invisibleCount} members are`
+        let quantity;
+        if(invisibleCount === 1){
+            quantity = `${invisibleCount} member is`;
+        }
+        if(invisibleCount > 1){
+            quantity = `${invisibleCount} members are`;
+        }
         await interaction.editReply(`${quantity} Invisible`);
     },
 };
