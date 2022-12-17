@@ -50,20 +50,3 @@ module.exports = {
         interaction.editReply({ embeds: [invisibleEmbed] });
     },
 };
-
-
-/*
-interaction.client.guilds.cache.forEach(async (guild) => {
-    if (guild.members.cache.has(member)) {
-        let guildtotalConnected = await presenceCounter(guild.id);
-        let guildtotalMembers = await guild.members.fetch()
-        let guildonlineMembers = guildtotalMembers.filter(member => member.presence)
-        let guildinvisibleCount = guildtotalConnected - guildonlineMembers.size;
-        if (guildinvisibleCount === 0) {
-            console.log("I reached this point")
-            const index = offlineMemberArray.indexOf(member);
-            offlineMemberArray.splice(index, 1)
-        }
-    }
-})
-*/
