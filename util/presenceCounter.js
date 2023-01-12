@@ -4,13 +4,16 @@ async function getCount(guildID) {
   let presenceCount;
   const options = {
     method: 'GET',
-    url: 'https://discord.com/api/v10/guilds/' + guildID + '?with_counts=true',
+    url: 'https://discord.com/api/guilds/' + guildID + 'widget.json',
     headers: {
       'Authorization': 'Bot ' + process.env.TOKEN
     }
   };
   await axios.request(options).then(function (res) {
-    presenceCount = res.data.approximate_presence_count
+    if(!res.data.presence_count){
+      throw new Error('Server Widget not Enabled!');
+    }
+    presenceCount = res.data.presence_count
   }).catch(function (error) {
     console.error(error)
   });
