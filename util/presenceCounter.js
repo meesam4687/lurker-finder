@@ -4,7 +4,7 @@ async function getCount(guildID) {
   let presenceCount;
   const options = {
     method: 'GET',
-    url: 'https://discord.com/api/guilds/' + guildID + 'widget.json',
+    url: 'https://discord.com/api/guilds/' + guildID + 'widget.json&timestamp=' + new Date().getTime(),
     headers: {
       'Authorization': 'Bot ' + process.env.TOKEN
     }
